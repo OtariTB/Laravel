@@ -3,11 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Home</title>
+    <title>GAMARjoba </title>
 </head>
 <body>
-    <h1>This is a Home</h1>
-    <h1>Home of - {{ $name }} {{$lastname}}</h1>
-    <p>{{ $method1 }}</p>
+    <h1>{{ $greeting }}</h1>
 </body>
 </html>

@@ -1,6 +1,9 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\TestControl;
+use App\Http\Controllers\MisalmebaController;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -26,3 +29,8 @@ Route::get('/main', function () {
 });
 
 Route::view('/main', 'home', ['name'=> 'Otari', 'lastname'=> 'Tabatadze']);
+
+Route::get('/test2', [TestControl::class, 'method1']);
+
+Route::get('/misalmeba', [MisalmebaController::class, 'showForm'])->name('greeting.form');
+Route::post('/greeting-result', [MisalmebaController::class, 'generateGreeting'])->name('greeting.result');
