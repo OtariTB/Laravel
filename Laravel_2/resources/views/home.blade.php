@@ -8,6 +8,6 @@
 <body>
     <h1>This is a Home</h1>
     <h1>Home of - {{ $name }} {{$lastname}}</h1>
-    <p>{{ $method1 }}</p>
+    <p></p>
 </body>
 </html>
