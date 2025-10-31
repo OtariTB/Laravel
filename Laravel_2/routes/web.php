@@ -3,6 +3,9 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\TestControl;
 use App\Http\Controllers\MisalmebaController;
+use App\Http\Controllers\StudentController;
+use App\Http\Controllers\CourseController;
+use App\Http\Controllers\EnrollmentController;
 
 
 /*
@@ -34,3 +37,12 @@ Route::get('/test2', [TestControl::class, 'method1']);
 
 Route::get('/misalmeba', [MisalmebaController::class, 'showForm'])->name('greeting.form');
 Route::post('/greeting-result', [MisalmebaController::class, 'generateGreeting'])->name('greeting.result');
+
+Route::resource('students', StudentController::class);
+
+// Course routes (CRUD)
+Route::resource('courses', CourseController::class);
+
+// Enrollment routes
+Route::get('students/{student}/enrollments', [StudentController::class, 'enrollments'])->name('students.enrollments');
+Route::post('students/{student}/enroll', [EnrollmentController::class, 'store'])->name('students.enroll');
